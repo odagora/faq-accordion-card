@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    &__image {
+        position: relative;
+        &-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 24px;
+            z-index: 1;
+            & picture {
+                display: block;
+                height: 240px;
+                background-image: url('../images/bg-pattern-mobile.svg');
+                background-repeat: no-repeat;
+                background-position: 50% 125px;
+            }
+        }
+        & img {
+            display: block;
+            margin: 0 auto;
+            width: 235px;
+            height: 210px;
+        }
+    }
+}

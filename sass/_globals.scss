@@ -1,0 +1,30 @@
+//Colors
+$primary-dark-text: hsl(238, 29%, 16%);
+$primary-soft-text: hsl(14, 88%, 65%);
+$primary-first-gradient: hsl(273, 75%, 66%);
+$primary-second-gradient: hsl(240, 73%, 65%);
+$neutral-dark-text: hsl(237, 12%, 33%);
+$neutral-soft-text: hsl(240, 6%, 50%);
+$neutral-divider: hsl(240, 5%, 91%);
+
+//Typography
+$font-family: 'Kumbh Sans', sans-serif;
+$font-size: 12px;
+$regular-font-weight: 400;
+$bold-font-weight: 700;
+
+//Global style normalization
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: $font-family;
+}
+
+body {
+    background: linear-gradient(180deg, $primary-first-gradient 0%, $primary-second-gradient 100%);
+}

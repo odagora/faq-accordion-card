@@ -28,3 +28,12 @@ html {
 body {
     background: linear-gradient(180deg, $primary-first-gradient 0%, $primary-second-gradient 100%);
 }
+
+//Mixins
+@keyframes details-show {
+    from {
+        // margin-bottom: -100%;
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}

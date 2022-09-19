@@ -1,11 +1,63 @@
 .card {
-    &__faq {
+    &__body {
         position: relative;
         margin: 148px 24px 0;
+        width: 327px;
         background-color: #FFFFFF;
         border-radius: 20px;
-        & h1 {
-            margin-top: 140px;
-        }
+    }
+    &__title {
+        margin-top: 130px;
+        padding: 0 20px;
+        font-size: 3rem;
+        color: $primary-dark-text;
+        text-align: center;
+    }
+}
+
+.list {
+    padding: 20px 20px 50px;
+    & details {
+        padding: 13px 0 23px;
+        border-bottom: 1px solid $neutral-divider;
+    }
+    & summary::before {
+        position: absolute;
+        content: url('../images/icon-arrow-down.svg');
+        color: $primary-soft-text;
+        left: unset;
+        right: 2.4rem;
+        transform: rotate(0);
+        transition: 0.45s transform ease;
+    }
+    & summary {
+        padding-left: 5px;
+        font-size: 1.3rem;
+        font-weight: 400;
+        letter-spacing: 0.01rem;
+        color: $neutral-dark-text;
+        list-style: none;
+    }
+    & p {
+        position: relative;
+        padding: 10px 20px 0 5px;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+        animation: details-show 500ms ease-in-out;
+        color: transparent;
+    }
+    & details[open] > summary {
+        font-weight: 700;
+        color: $primary-dark-text;
+    }
+    & details[open] > summary::before {
+        transform: rotate(180deg);
+        transition: 0.45s transform ease;
+    }
+    & details[open] p {
+        color: $neutral-soft-text;
     }
 }

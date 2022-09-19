@@ -13,22 +13,30 @@ body {
   background: linear-gradient(180deg, hsl(273deg, 75%, 66%) 0%, hsl(240deg, 73%, 65%) 100%);
 }
 
+@keyframes details-show {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
 .card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
-.card__image {
+.card__header {
   position: relative;
 }
-.card__image-container {
+.card__image {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 24px;
   z-index: 1;
 }
-.card__image-container picture {
+.card__image picture {
   display: block;
   height: 240px;
   background-image: url("../images/bg-pattern-mobile.svg");
@@ -42,14 +50,66 @@ body {
   height: 210px;
 }
 
-.card__faq {
+.card__body {
   position: relative;
   margin: 148px 24px 0;
+  width: 327px;
   background-color: #FFFFFF;
   border-radius: 20px;
 }
-.card__faq h1 {
-  margin-top: 140px;
+.card__title {
+  margin-top: 130px;
+  padding: 0 20px;
+  font-size: 3rem;
+  color: hsl(238deg, 29%, 16%);
+  text-align: center;
+}
+
+.list {
+  padding: 20px 20px 50px;
+}
+.list details {
+  padding: 13px 0 23px;
+  border-bottom: 1px solid hsl(240deg, 5%, 91%);
+}
+.list summary::before {
+  position: absolute;
+  content: url("../images/icon-arrow-down.svg");
+  color: hsl(14deg, 88%, 65%);
+  left: unset;
+  right: 2.4rem;
+  transform: rotate(0);
+  transition: 0.45s transform ease;
+}
+.list summary {
+  padding-left: 5px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  color: hsl(237deg, 12%, 33%);
+  list-style: none;
+}
+.list p {
+  position: relative;
+  padding: 10px 20px 0 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  animation: details-show 500ms ease-in-out;
+  color: transparent;
+}
+.list details[open] > summary {
+  font-weight: 700;
+  color: hsl(238deg, 29%, 16%);
+}
+.list details[open] > summary::before {
+  transform: rotate(180deg);
+  transition: 0.45s transform ease;
+}
+.list details[open] p {
+  color: hsl(240deg, 6%, 50%);
 }
 
 .attribution {
@@ -58,7 +118,7 @@ body {
 }
 
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=styles.css.map */

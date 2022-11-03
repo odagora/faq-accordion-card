@@ -18,3 +18,7 @@
 design/
 style-guide.md
 README-template.md
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map

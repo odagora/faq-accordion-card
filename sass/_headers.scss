@@ -1,7 +1,6 @@
 .card {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     align-items: center;
     min-height: 100vh;
     &__header {
@@ -11,7 +10,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        margin-top: 24px;
+        margin-top: 10px;
         z-index: 1;
         & picture {
             display: block;
@@ -24,7 +23,7 @@
             display: block;
             margin: 0 auto;
             width: 235px;
-            height: 210px;
+            height: 232px;
         }
     }
 }

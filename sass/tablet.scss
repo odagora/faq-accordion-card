@@ -10,17 +10,30 @@
     background-image: url('../images/bg-pattern-desktop.svg');
     background-repeat: no-repeat;
     background-position: -560px -295px;
+    & .image-box {
+      position: absolute;
+      display: block;
+      height: 200px;
+      width: 200px;
+      left: -95px;
+      top: 205px;
+      z-index: 1;
+  }
   }
   &__image {
-    margin-top: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -60px;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
     & picture {
       height: auto;
     }
     & img {
-      width: 480px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -70px;
+      width: 470px;
       height: 360px;
     }
   }

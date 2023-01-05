@@ -13,10 +13,9 @@ body {
   background: linear-gradient(180deg, hsl(273deg, 75%, 66%) 0%, hsl(240deg, 73%, 65%) 100%);
 }
 
-@keyframes details-show {
-  from {
-    opacity: 0;
-    transform: translateY(-100%);
+@keyframes hide-scroll {
+  from, to {
+    overflow: hidden;
   }
 }
 .card {
@@ -32,7 +31,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 80px;
+  margin-top: 15px;
   z-index: 1;
 }
 .card__image picture {
@@ -61,6 +60,7 @@ body {
   width: 327px;
   background-color: #FFFFFF;
   border-radius: 20px;
+  height: 550px;
 }
 .card__title {
   margin-top: 130px;
@@ -73,11 +73,42 @@ body {
 .list {
   padding: 20px 20px 50px;
 }
-.list details {
-  padding: 13px 0 23px;
+.list__item {
+  width: 100%;
+  overflow: hidden;
   border-bottom: 1px solid hsl(240deg, 5%, 91%);
 }
-.list summary::before {
+.list__item input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.list__item input:checked + label {
+  font-weight: 700;
+  color: hsl(238deg, 29%, 16%);
+}
+.list__item input:checked + label::before {
+  transform: rotate(180deg);
+  transition: 0.45s transform ease;
+}
+.list__item input:checked ~ .item__content {
+  overflow: auto;
+  height: 70px;
+  color: hsl(240deg, 6%, 50%);
+  animation: hide-scroll 0.5s backwards;
+}
+.list__item label {
+  padding: 15px 0 15px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  color: hsl(237deg, 12%, 33%);
+  list-style: none;
+  cursor: pointer;
+}
+.list__item label::before {
   position: absolute;
   content: url("../images/icon-arrow-down.svg");
   color: hsl(14deg, 88%, 65%);
@@ -86,35 +117,22 @@ body {
   transform: rotate(0);
   transition: 0.45s transform ease;
 }
-.list summary {
-  padding-left: 5px;
-  font-size: 1.3rem;
-  font-weight: 400;
-  letter-spacing: 0.01rem;
-  color: hsl(237deg, 12%, 33%);
-  list-style: none;
+.list__item label:hover {
+  color: hsl(14deg, 88%, 65%);
 }
-.list p {
-  position: relative;
-  padding: 10px 20px 0 5px;
+.list .item__content {
+  height: 0;
+  overflow: hidden;
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.8rem;
   z-index: 1;
-  transition: all 0.3s ease-in-out;
-  animation: details-show 500ms ease-in-out;
   color: transparent;
-}
-.list details[open] > summary {
-  font-weight: 700;
-  color: hsl(238deg, 29%, 16%);
-}
-.list details[open] > summary::before {
-  transform: rotate(180deg);
-  transition: 0.45s transform ease;
-}
-.list details[open] p {
-  color: hsl(240deg, 6%, 50%);
+  -webkit-transition: height 0.5s ease;
+  -moz-transition: height 0.5s ease;
+  -ms-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
+  transition: height 0.5s ease;
 }
 
 .attribution {

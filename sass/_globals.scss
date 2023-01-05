@@ -30,10 +30,6 @@ body {
 }
 
 //Mixins
-@keyframes details-show {
-    from {
-        // margin-bottom: -100%;
-        opacity: 0;
-        transform: translateY(-100%);
-    }
+@keyframes hide-scroll {
+    from, to { overflow: hidden; }
 }

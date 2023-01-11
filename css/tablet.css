@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   align-items: center;
-  width: 925px;
+  max-width: 925px;
   height: 510px;
   min-height: auto;
   background-color: #FFFFFF;
@@ -11,6 +11,7 @@
 .card__header {
   position: relative;
   height: 100%;
+  width: 100%;
   background-image: url("../images/bg-pattern-desktop.svg");
   background-repeat: no-repeat;
   background-position: -560px -295px;
@@ -45,12 +46,19 @@
   margin: 0;
   width: 395px;
   height: 100%;
+  width: 100%;
   background-color: transparent;
 }
 .card__title {
   margin-top: 65px;
-  padding: 0 37px;
+  padding: 0 37px 0 18px;
   text-align: left;
+}
+.card .list {
+  padding: 20px 112px 50px 18px;
+}
+.card .list__item label::before {
+  right: 11rem;
 }
 
 /*# sourceMappingURL=tablet.css.map */

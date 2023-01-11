@@ -1,16 +1,14 @@
 .card {
-    margin: 10vh auto;
     &__body {
         position: relative;
-        margin: 148px auto;
         width: 327px;
         background-color: #FFFFFF;
         border-radius: 20px;
         height: 550px;
     }
     &__title {
-        margin-top: 130px;
-        padding: 0 20px;
+        margin-top: 133px;
+        padding: 130px 20px 0;
         font-size: 3rem;
         color: $primary-dark-text;
         text-align: center;

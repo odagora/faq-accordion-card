@@ -22,3 +22,4 @@ README-template.md
 *.css.map
 *.sass.map
 *.scss.map
+node_modules/

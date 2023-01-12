@@ -57,7 +57,7 @@
 .card .list {
   padding: 20px 112px 50px 18px;
 }
-.card .list__item label::before {
+.card .list .item__heading::before {
   right: 11rem;
 }
 

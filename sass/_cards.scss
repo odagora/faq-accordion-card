@@ -21,28 +21,9 @@
         width: 100%;
         overflow: hidden;
         border-bottom: 1px solid $neutral-divider;
-        & input {
-            position: absolute;
-            opacity: 0;
-            z-index: -1;
-            &:checked {
-                + label {
-                    font-weight: 700;
-                    color: $primary-dark-text;
-                    &::before {
-                        transform: rotate(180deg);
-                        transition: 0.45s transform ease;
-                    }
-                }
-                ~ .item__content {
-                    overflow: auto;
-                    height: 70px;
-                    color: $neutral-soft-text;
-                    animation: hide-scroll 0.5s backwards;
-                }
-            }
-        }
-        & label {
+    }
+    & .item {
+        &__heading {
             padding: 15px 0 15px 0;
             display: flex;
             justify-content: space-between;
@@ -65,21 +46,52 @@
                 color: $primary-soft-text;
             }
         }
-    }
-    & .item {
         &__content {
-            height: 0;
             overflow: hidden;
             font-size: 1.2rem;
             font-weight: 400;
             line-height: 1.8rem;
             z-index: 1;
-            color: transparent;
-            -webkit-transition: height 0.5s ease;
-            -moz-transition: height 0.5s ease;
-            -ms-transition: height 0.5s ease;
-            -o-transition: height 0.5s ease;
-            transition: height 0.5s ease;
+            & p {
+                color: $neutral-soft-text;
+            }
         }
+    }
+}
+
+.close {
+    & .item__content {
+        height: 0;
+        transition:height 1s ease-out;
+        -webkit-transform: scaleY(0);
+        -o-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+    }
+}
+
+.open {
+    & .item__heading {
+        font-weight: 700;
+        color: $primary-dark-text;
+        &::before {
+            transform: rotate(180deg);
+            transition: 0.45s transform ease;
+        }
+    }
+    & .item__content {
+        padding-bottom: 15px;
+        -webkit-transform: scaleY(1);
+        -o-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: top;
+        -o-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+        -webkit-transition: -webkit-transform 0.4s ease-out;
+        -o-transition: -o-transform 0.4s ease;
+        -ms-transition: -ms-transform 0.4s ease;
+        transition: transform 0.4s ease;
     }
 }

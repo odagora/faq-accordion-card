@@ -55,8 +55,8 @@
   }
   & .list {
     padding: 20px 112px 50px 18px;
-    &__item {
-      & label {
+    & .item {
+      &__heading {
         &::before {
           right: 11rem;
         }
